@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-const videos = [
+const fbVideos = [
   {
     href: "https://www.facebook.com/share/v/17ykdE1Luy/",
     title: "心臟健康衛教分享",
@@ -40,7 +40,6 @@ export default function Videos() {
 
   return (
     <section id="videos" style={{ padding: "100px 0", background: "#000814", position: "relative", overflow: "hidden" }}>
-      {/* Animated background grid */}
       <div className="grid-bg scanline" style={{ position: "absolute", inset: 0, opacity: 0.6 }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,102,255,0.08) 0%, transparent 70%)" }} />
 
@@ -54,61 +53,116 @@ export default function Videos() {
           </p>
         </div>
 
-        {/* Video grid */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 24, marginBottom: 48 }}>
-          {videos.map((v, i) => (
+        {/* ── Featured YouTube Live ── */}
+        <div className="video-card" style={{ marginBottom: 32 }}>
+          <div className="video-header">
+            <div className="video-dot" style={{ background: "#ff0000", boxShadow: "0 0 8px rgba(255,0,0,0.9)" }} />
+            <span className="video-label-text" style={{ color: "rgba(255,80,80,0.8)" }}>YOUTUBE LIVE ／ 完整直播節目</span>
+            <span style={{ marginLeft: "auto", fontSize: "0.7rem", color: "rgba(255,80,80,0.4)", fontFamily: "monospace" }}>
+              YT_LIVE_001
+            </span>
+          </div>
+
+          <div style={{
+            background: "#000",
+            borderBottom: "1px solid rgba(255,50,50,0.2)",
+            position: "relative",
+            paddingTop: "56.25%",
+          }}>
+            <iframe
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+              src="https://www.youtube.com/embed/zZptoz_2FOQ"
+              title="袁明琦醫師 心臟健康完整直播節目"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+
+          <div style={{ padding: "20px 24px", display: "flex", gap: 24, alignItems: "flex-start", flexWrap: "wrap" }}>
+            <div style={{ flex: 1, minWidth: 200 }}>
+              <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", fontWeight: 700, color: "#ff5050", marginBottom: 8, textShadow: "0 0 12px rgba(255,0,0,0.4)" }}>
+                ▸ 完整直播節目｜心臟健康全方位講座
+              </h3>
+              <p style={{ fontSize: "0.85rem", color: "rgba(255,255,255,0.55)", lineHeight: 1.75 }}>
+                袁明琦醫師完整直播節目，深入探討心臟疾病預防、治療與日常保健，歡迎隨時重播學習，掌握完整心臟健康知識。
+              </p>
+            </div>
+            <a
+              href="https://www.youtube.com/live/zZptoz_2FOQ"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-neon btn-neon-red"
+              style={{ whiteSpace: "nowrap", alignSelf: "center" }}
+            >
+              ▶ YouTube 觀看
+            </a>
+          </div>
+        </div>
+
+        {/* ── Facebook Videos ── */}
+        <div style={{
+          display: "flex", alignItems: "center", gap: 12, marginBottom: 24,
+          fontSize: "0.72rem", letterSpacing: 3, color: "rgba(0,212,255,0.5)",
+        }}>
+          <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, rgba(0,212,255,0.3))" }} />
+          FACEBOOK 節目精華
+          <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, rgba(0,212,255,0.3), transparent)" }} />
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24, marginBottom: 48 }}>
+          {fbVideos.map((v, i) => (
             <div key={i} className="video-card">
-              {/* Header bar */}
               <div className="video-header">
                 <div className="video-dot" />
                 <span className="video-label-text">{v.tag}</span>
                 <span style={{ marginLeft: "auto", fontSize: "0.7rem", color: "rgba(0,212,255,0.4)", fontFamily: "monospace" }}>
-                  SRC_{String(i + 1).padStart(3, "0")}
+                  FB_{String(i + 1).padStart(3, "0")}
                 </span>
               </div>
 
-              {/* FB Embed */}
               <div style={{
                 background: "#000c1a",
-                minHeight: v.reel ? 380 : 300,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                minHeight: v.reel ? 360 : 280,
+                display: "flex", alignItems: "center", justifyContent: "center",
                 overflow: "hidden",
                 borderBottom: "1px solid rgba(0,212,255,0.1)",
               }}>
                 <div
                   className="fb-video"
                   data-href={v.href}
-                  data-width={v.reel ? "380" : "500"}
+                  data-width={v.reel ? "360" : "480"}
                   data-show-text="false"
                   data-allowfullscreen="true"
                 />
               </div>
 
-              {/* Info */}
-              <div style={{ padding: "20px 20px" }}>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "1rem", fontWeight: 700, color: "#00d4ff", marginBottom: 8, textShadow: "0 0 12px rgba(0,212,255,0.4)" }}>
+              <div style={{ padding: "18px 20px" }}>
+                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "0.95rem", fontWeight: 700, color: "#00d4ff", marginBottom: 8, textShadow: "0 0 12px rgba(0,212,255,0.4)" }}>
                   ▸ {v.title}
                 </h3>
-                <p style={{ fontSize: "0.83rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>{v.desc}</p>
+                <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>{v.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* CTA */}
-        <div style={{ textAlign: "center" }}>
-          <p style={{ color: "rgba(255,255,255,0.45)", marginBottom: 20, fontSize: "0.9rem", letterSpacing: 1 }}>
-            ── 想觀看更多袁醫師的分享 ──
-          </p>
+        <div style={{ textAlign: "center", display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
+          <a
+            href="https://www.youtube.com/live/zZptoz_2FOQ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-neon btn-neon-red"
+          >
+            ▶ YouTube 訂閱頻道
+          </a>
           <a
             href="https://www.facebook.com"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-neon btn-neon-cyan"
           >
-            ▸ 追蹤 Facebook 專頁
+            ▸ Facebook 追蹤專頁
           </a>
         </div>
       </div>
