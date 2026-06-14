@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Noto_Serif_TC, Noto_Sans_TC } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const notoSerif = Noto_Serif_TC({
@@ -37,13 +36,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${notoSerif.variable} ${notoSans.variable}`}
     >
       <body>
-        <div id="fb-root" />
-        <Script
-          id="fb-sdk"
-          strategy="lazyOnload"
-          src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v19.0"
-          crossOrigin="anonymous"
-        />
         {children}
       </body>
     </html>

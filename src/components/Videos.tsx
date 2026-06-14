@@ -1,53 +1,23 @@
 "use client";
 
-const fbVideos = [
-  {
-    embedUrl:
-      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F17ykdE1Luy%2F&show_text=false&width=560",
-    href: "https://www.facebook.com/share/v/17ykdE1Luy/",
-    title: "心臟健康衛教分享",
-    desc: "袁明琦醫師於節目中深入淺出地分享心臟健康知識，讓民眾了解如何預防心臟疾病，守護自身健康。",
-    tag: "HEALTH EDUCATION",
-    aspectRatio: "56.25%",
-  },
-  {
-    embedUrl:
-      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F1DaynET9PE%2F&show_text=false&width=560",
-    href: "https://www.facebook.com/share/v/1DaynET9PE/",
-    title: "醫學常識教學",
-    desc: "透過生動的節目形式，袁醫師解析常見心臟問題，提供實用保健建議，讓每個人都能掌握健康知識。",
-    tag: "MEDICAL KNOWLEDGE",
-    aspectRatio: "56.25%",
-  },
-  {
-    embedUrl:
-      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F14eiqH8bH1F%2F&show_text=false&width=560",
-    href: "https://www.facebook.com/share/r/14eiqH8bH1F/",
-    title: "心臟保健精華短片",
-    desc: "袁明琦醫師精彩的節目精華片段，在短短數分鐘內傳遞最重要的心臟健康資訊，隨時增進健康知識。",
-    tag: "SHORT REEL",
-    aspectRatio: "177.78%",
-  },
-];
-
 export default function Videos() {
   return (
     <section id="videos" style={{ padding: "100px 0", background: "#000814", position: "relative", overflow: "hidden" }}>
       <div className="grid-bg scanline" style={{ position: "absolute", inset: 0, opacity: 0.6 }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,102,255,0.08) 0%, transparent 70%)" }} />
 
-      <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", position: "relative" }}>
+      <div style={{ maxWidth: 900, margin: "0 auto", padding: "0 24px", position: "relative" }}>
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: 64 }}>
+        <div style={{ textAlign: "center", marginBottom: 56 }}>
           <div className="section-label" style={{ justifyContent: "center" }}>節目影片</div>
           <h2 className="section-title">媒體衛教分享</h2>
           <p className="section-desc" style={{ margin: "0 auto" }}>
-            袁醫師於各大節目分享心臟與醫學知識，帶您了解身體的奧秘
+            袁醫師於節目中分享心臟與醫學知識，帶您了解身體的奧秘
           </p>
         </div>
 
-        {/* ── Featured YouTube Live ── */}
-        <div className="video-card" style={{ marginBottom: 32 }}>
+        {/* YouTube */}
+        <div className="video-card">
           <div className="video-header">
             <div className="video-dot" style={{ background: "#ff0000", boxShadow: "0 0 8px rgba(255,0,0,0.9)" }} />
             <span className="video-label-text" style={{ color: "rgba(255,80,80,0.8)" }}>YOUTUBE LIVE ／ 完整直播節目</span>
@@ -87,66 +57,35 @@ export default function Videos() {
           </div>
         </div>
 
-        {/* ── Facebook Videos ── */}
-        <div style={{
-          display: "flex", alignItems: "center", gap: 12, marginBottom: 24,
-          fontSize: "0.72rem", letterSpacing: 3, color: "rgba(0,212,255,0.5)",
-        }}>
-          <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, transparent, rgba(0,212,255,0.3))" }} />
-          FACEBOOK 節目精華
-          <div style={{ flex: 1, height: 1, background: "linear-gradient(90deg, rgba(0,212,255,0.3), transparent)" }} />
-        </div>
-
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24, marginBottom: 48 }}>
-          {fbVideos.map((v, i) => (
-            <div key={i} className="video-card">
-              <div className="video-header">
-                <div className="video-dot" />
-                <span className="video-label-text">{v.tag}</span>
-                <span style={{ marginLeft: "auto", fontSize: "0.7rem", color: "rgba(0,212,255,0.4)", fontFamily: "monospace" }}>
-                  FB_{String(i + 1).padStart(3, "0")}
-                </span>
-              </div>
-
-              {/* Facebook iframe embed */}
-              <div style={{ position: "relative", paddingTop: v.aspectRatio, background: "#000c1a", borderBottom: "1px solid rgba(0,212,255,0.1)" }}>
-                <iframe
-                  src={v.embedUrl}
-                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none", overflow: "hidden" }}
-                  scrolling="no"
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen
-                  title={v.title}
-                />
-              </div>
-
-              <div style={{ padding: "18px 20px" }}>
-                <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "0.95rem", fontWeight: 700, color: "#00d4ff", marginBottom: 8, textShadow: "0 0 12px rgba(0,212,255,0.4)" }}>
-                  ▸ {v.title}
-                </h3>
-                <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginBottom: 12 }}>{v.desc}</p>
-                <a
-                  href={v.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-neon btn-neon-cyan"
-                  style={{ fontSize: "0.75rem", padding: "6px 14px" }}
-                >
-                  ▸ Facebook 觀看
-                </a>
-              </div>
-            </div>
+        {/* Facebook links */}
+        <div style={{ marginTop: 40, display: "flex", flexDirection: "column", gap: 12 }}>
+          <p style={{ fontSize: "0.8rem", letterSpacing: 3, color: "rgba(0,212,255,0.4)", textAlign: "center", marginBottom: 8 }}>
+            MORE VIDEOS · 更多影片
+          </p>
+          {[
+            { href: "https://www.facebook.com/share/v/17ykdE1Luy/", label: "▸ 心臟健康衛教分享" },
+            { href: "https://www.facebook.com/share/v/1DaynET9PE/", label: "▸ 醫學常識教學" },
+            { href: "https://www.facebook.com/share/r/14eiqH8bH1F/", label: "▸ 心臟保健精華短片" },
+          ].map((v, i) => (
+            <a
+              key={i}
+              href={v.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "flex", alignItems: "center", gap: 16, padding: "14px 20px",
+                background: "#000c1a", border: "1px solid #1a3a5c", borderRadius: 8,
+                color: "#00d4ff", fontSize: "0.95rem", textDecoration: "none",
+                transition: "border-color 0.2s",
+              }}
+            >
+              <span style={{ fontSize: "1.4rem" }}>▶</span>
+              <span>{v.label}</span>
+              <span style={{ marginLeft: "auto", fontSize: "0.75rem", color: "rgba(0,212,255,0.4)", fontFamily: "monospace" }}>
+                Facebook →
+              </span>
+            </a>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div style={{ textAlign: "center", display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <a href="https://www.youtube.com/live/zZptoz_2FOQ" target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-red">
-            ▶ YouTube 訂閱頻道
-          </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-cyan">
-            ▸ Facebook 追蹤專頁
-          </a>
         </div>
       </div>
     </section>
