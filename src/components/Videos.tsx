@@ -2,7 +2,7 @@
 
 export default function Videos() {
   return (
-    <section id="videos" style={{ padding: "100px 0", background: "#000814", position: "relative", overflow: "hidden" }}>
+    <section id="videos" style={{ padding: "100px 0", background: "transparent", position: "relative", overflow: "hidden" }}>
       <div className="grid-bg scanline" style={{ position: "absolute", inset: 0, opacity: 0.6 }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,102,255,0.08) 0%, transparent 70%)" }} />
 
@@ -74,7 +74,7 @@ export default function Videos() {
               rel="noopener noreferrer"
               style={{
                 display: "flex", alignItems: "center", gap: 16, padding: "14px 20px",
-                background: "#000c1a", border: "1px solid #1a3a5c", borderRadius: 8,
+                background: "rgba(13,16,64,0.7)", border: "1px solid #1a3a5c", borderRadius: 8,
                 color: "#00d4ff", fontSize: "0.95rem", textDecoration: "none",
                 transition: "border-color 0.2s",
               }}

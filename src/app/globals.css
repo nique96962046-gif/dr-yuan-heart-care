@@ -7,8 +7,8 @@
   --blue: #0066ff;
   --red: #ff003c;
   --red-dim: #cc0030;
-  --bg: #000814;
-  --bg-mid: #00111f;
+  --bg: #0a0a2e;
+  --bg-mid: #0d1040;
   --bg-card: rgba(0,212,255,0.04);
   --border: rgba(0,212,255,0.2);
   --border-strong: rgba(0,212,255,0.5);
@@ -22,7 +22,8 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  background: var(--bg);
+  background: linear-gradient(160deg, #0a0a2e 0%, #0d1040 40%, #0a1a4a 70%, #0d0a35 100%);
+  background-attachment: fixed;
   color: rgba(255,255,255,0.85);
   font-family: var(--font-sans);
   line-height: 1.6;

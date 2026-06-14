@@ -40,7 +40,7 @@ export default function HealthTips() {
   const tips = content[active];
 
   return (
-    <section id="health-tips" style={{ padding: "100px 0", background: "#000c1a", position: "relative" }}>
+    <section id="health-tips" style={{ padding: "100px 0", background: "rgba(13,16,64,0.7)", position: "relative" }}>
       <div className="dot-bg" style={{ position: "absolute", inset: 0, opacity: 0.3 }} />
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", position: "relative" }}>

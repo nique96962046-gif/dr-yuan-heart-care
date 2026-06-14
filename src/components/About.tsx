@@ -22,7 +22,7 @@ const cards = [
 
 export default function About() {
   return (
-    <section id="about" style={{ padding: "100px 0", background: "#000c1a", position: "relative", overflow: "hidden" }}>
+    <section id="about" style={{ padding: "100px 0", background: "rgba(13,16,64,0.7)", position: "relative", overflow: "hidden" }}>
       {/* Background dot pattern */}
       <div className="dot-bg" style={{ position: "absolute", inset: 0, opacity: 0.4 }} />
 

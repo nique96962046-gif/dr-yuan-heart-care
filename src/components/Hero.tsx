@@ -70,7 +70,7 @@ export default function Hero() {
         justifyContent: "center",
         position: "relative",
         overflow: "hidden",
-        background: "linear-gradient(180deg, #000814 0%, #00111f 60%, #000814 100%)",
+        background: "linear-gradient(180deg, transparent 0%, #00111f 60%, transparent 100%)",
         paddingTop: 80,
       }}
     >
