@@ -5,8 +5,6 @@ const links = [
   { href: "#about", label: "關於醫師" },
   { href: "#videos", label: "節目影片" },
   { href: "#health-tips", label: "心臟保健" },
-  { href: "#charity", label: "義診公益" },
-  { href: "#contact", label: "聯絡資訊" },
 ];
 
 export default function Navbar() {
