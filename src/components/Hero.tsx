@@ -140,8 +140,8 @@ export default function Hero() {
         </p>
 
         <p style={{ fontSize: "1.05rem", color: "rgba(255,255,255,0.65)", lineHeight: 2, marginBottom: 40, maxWidth: 580, margin: "0 auto 40px" }}>
-          以精湛醫術守護心臟健康，深入社區義診服務<br />
-          透過媒體傳播心臟知識，讓每一顆心都跳動不息
+          仁心仁術守護心臟健康，透過媒體傳播心臟知識<br />
+          讓每一顆跳動的心滿懷喜悅
         </p>
 
         {/* EKG */}
