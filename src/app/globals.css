@@ -398,7 +398,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== Video Card ===== */
 .video-card {
-  background: rgba(0,8,20,0.8);
+  background: rgba(10,10,46,0.8);
   border: 1px solid rgba(0,212,255,0.2);
   border-radius: 4px;
   overflow: hidden;
@@ -452,7 +452,7 @@ a { color: inherit; text-decoration: none; }
 
 /* ===== Contact Card ===== */
 .contact-card {
-  background: rgba(0,8,20,0.7);
+  background: rgba(10,10,46,0.7);
   border: 1px solid rgba(0,212,255,0.2);
   border-radius: 4px;
   padding: 36px 28px;

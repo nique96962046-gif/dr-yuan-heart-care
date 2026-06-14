@@ -9,7 +9,7 @@ const features = [
 
 export default function Charity() {
   return (
-    <section id="charity" style={{ padding: "100px 0", background: "#000814", position: "relative", overflow: "hidden" }}>
+    <section id="charity" style={{ padding: "100px 0", background: "#080d35", position: "relative", overflow: "hidden" }}>
       <div className="grid-bg scanline" style={{ position: "absolute", inset: 0, opacity: 0.5 }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 50% 60% at 20% 50%, rgba(255,0,60,0.06) 0%, transparent 60%)" }} />
 
@@ -42,7 +42,7 @@ export default function Charity() {
             </div>
 
             <div style={{
-              background: "rgba(0,8,20,0.8)", border: "1px solid rgba(0,212,255,0.2)",
+              background: "rgba(10,10,46,0.8)", border: "1px solid rgba(0,212,255,0.2)",
               borderTop: "none", borderRadius: "0 0 4px 4px", padding: "32px",
             }}>
               <div style={{ fontSize: "3rem", marginBottom: 20 }}>🏥</div>

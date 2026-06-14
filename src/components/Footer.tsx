@@ -29,7 +29,7 @@ const navCols = [
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#000510", borderTop: "1px solid rgba(0,212,255,0.15)" }}>
+    <footer style={{ background: "#060924", borderTop: "1px solid rgba(0,212,255,0.15)" }}>
       {/* Top accent */}
       <div className="progress-bar" style={{ height: 2 }} />
 

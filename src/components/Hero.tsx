@@ -163,7 +163,7 @@ export default function Hero() {
       {/* Stats bar */}
       <div style={{
         position: "absolute", bottom: 0, left: 0, right: 0,
-        background: "rgba(0,8,20,0.8)",
+        background: "rgba(10,10,46,0.8)",
         borderTop: "1px solid rgba(0,212,255,0.15)",
         backdropFilter: "blur(8px)",
       }}>

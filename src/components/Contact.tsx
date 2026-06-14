@@ -27,7 +27,7 @@ const cards = [
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ padding: "100px 0", background: "#000c1a", position: "relative" }}>
+    <section id="contact" style={{ padding: "100px 0", background: "#0a1040", position: "relative" }}>
       <div className="dot-bg" style={{ position: "absolute", inset: 0, opacity: 0.25 }} />
 
       <div style={{ maxWidth: 1200, margin: "0 auto", padding: "0 24px", position: "relative" }}>

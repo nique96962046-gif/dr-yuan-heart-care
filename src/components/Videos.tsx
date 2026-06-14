@@ -26,7 +26,7 @@ export default function Videos() {
             </span>
           </div>
 
-          <div style={{ background: "#000", borderBottom: "1px solid rgba(255,50,50,0.2)", position: "relative", paddingTop: "56.25%" }}>
+          <div style={{ background: "#0a0a2e", borderBottom: "1px solid rgba(255,50,50,0.2)", position: "relative", paddingTop: "56.25%" }}>
             <iframe
               style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
               src="https://www.youtube.com/embed/zZptoz_2FOQ"

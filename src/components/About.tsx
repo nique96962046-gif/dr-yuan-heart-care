@@ -71,7 +71,7 @@ export default function About() {
 
         {/* Mission quote */}
         <div style={{
-          background: "rgba(0,8,20,0.8)",
+          background: "rgba(10,10,46,0.8)",
           border: "1px solid rgba(0,212,255,0.2)",
           borderRadius: 4,
           padding: "56px 48px",

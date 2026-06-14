@@ -24,7 +24,7 @@ export default function Navbar() {
       style={{
         position: "fixed", top: 0, left: 0, right: 0, zIndex: 1000,
         padding: scrolled ? "10px 0" : "18px 0",
-        background: scrolled ? "rgba(0,8,20,0.92)" : "transparent",
+        background: scrolled ? "rgba(10,10,46,0.92)" : "transparent",
         borderBottom: scrolled ? "1px solid rgba(0,212,255,0.2)" : "none",
         backdropFilter: scrolled ? "blur(16px)" : "none",
         boxShadow: scrolled ? "0 0 30px rgba(0,212,255,0.08)" : "none",
@@ -99,7 +99,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div style={{
-          position: "fixed", inset: 0, background: "rgba(0,8,20,0.97)",
+          position: "fixed", inset: 0, background: "rgba(10,10,46,0.97)",
           display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 24,
           zIndex: 999,
         }}>
