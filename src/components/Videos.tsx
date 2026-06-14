@@ -1,43 +1,36 @@
 "use client";
-import { useEffect } from "react";
-
-declare global {
-  interface Window {
-    FB?: { XFBML: { parse: () => void } };
-  }
-}
 
 const fbVideos = [
   {
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F17ykdE1Luy%2F&show_text=false&width=560",
     href: "https://www.facebook.com/share/v/17ykdE1Luy/",
     title: "心臟健康衛教分享",
     desc: "袁明琦醫師於節目中深入淺出地分享心臟健康知識，讓民眾了解如何預防心臟疾病，守護自身健康。",
     tag: "HEALTH EDUCATION",
+    aspectRatio: "56.25%",
   },
   {
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fv%2F1DaynET9PE%2F&show_text=false&width=560",
     href: "https://www.facebook.com/share/v/1DaynET9PE/",
     title: "醫學常識教學",
     desc: "透過生動的節目形式，袁醫師解析常見心臟問題，提供實用保健建議，讓每個人都能掌握健康知識。",
     tag: "MEDICAL KNOWLEDGE",
+    aspectRatio: "56.25%",
   },
   {
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fshare%2Fr%2F14eiqH8bH1F%2F&show_text=false&width=560",
     href: "https://www.facebook.com/share/r/14eiqH8bH1F/",
     title: "心臟保健精華短片",
     desc: "袁明琦醫師精彩的節目精華片段，在短短數分鐘內傳遞最重要的心臟健康資訊，隨時增進健康知識。",
     tag: "SHORT REEL",
-    reel: true,
+    aspectRatio: "177.78%",
   },
 ];
 
 export default function Videos() {
-  useEffect(() => {
-    const parse = () => {
-      if (window.FB) window.FB.XFBML.parse();
-    };
-    const timer = setTimeout(parse, 1500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <section id="videos" style={{ padding: "100px 0", background: "#000814", position: "relative", overflow: "hidden" }}>
       <div className="grid-bg scanline" style={{ position: "absolute", inset: 0, opacity: 0.6 }} />
@@ -63,12 +56,7 @@ export default function Videos() {
             </span>
           </div>
 
-          <div style={{
-            background: "#000",
-            borderBottom: "1px solid rgba(255,50,50,0.2)",
-            position: "relative",
-            paddingTop: "56.25%",
-          }}>
+          <div style={{ background: "#000", borderBottom: "1px solid rgba(255,50,50,0.2)", position: "relative", paddingTop: "56.25%" }}>
             <iframe
               style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
               src="https://www.youtube.com/embed/zZptoz_2FOQ"
@@ -120,19 +108,15 @@ export default function Videos() {
                 </span>
               </div>
 
-              <div style={{
-                background: "#000c1a",
-                minHeight: v.reel ? 360 : 280,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                overflow: "hidden",
-                borderBottom: "1px solid rgba(0,212,255,0.1)",
-              }}>
-                <div
-                  className="fb-video"
-                  data-href={v.href}
-                  data-width={v.reel ? "360" : "480"}
-                  data-show-text="false"
-                  data-allowfullscreen="true"
+              {/* Facebook iframe embed */}
+              <div style={{ position: "relative", paddingTop: v.aspectRatio, background: "#000c1a", borderBottom: "1px solid rgba(0,212,255,0.1)" }}>
+                <iframe
+                  src={v.embedUrl}
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  title={v.title}
                 />
               </div>
 
@@ -140,7 +124,16 @@ export default function Videos() {
                 <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "0.95rem", fontWeight: 700, color: "#00d4ff", marginBottom: 8, textShadow: "0 0 12px rgba(0,212,255,0.4)" }}>
                   ▸ {v.title}
                 </h3>
-                <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}>{v.desc}</p>
+                <p style={{ fontSize: "0.82rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7, marginBottom: 12 }}>{v.desc}</p>
+                <a
+                  href={v.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-neon btn-neon-cyan"
+                  style={{ fontSize: "0.75rem", padding: "6px 14px" }}
+                >
+                  ▸ Facebook 觀看
+                </a>
               </div>
             </div>
           ))}
@@ -148,20 +141,10 @@ export default function Videos() {
 
         {/* CTA */}
         <div style={{ textAlign: "center", display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap" }}>
-          <a
-            href="https://www.youtube.com/live/zZptoz_2FOQ"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-neon btn-neon-red"
-          >
+          <a href="https://www.youtube.com/live/zZptoz_2FOQ" target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-red">
             ▶ YouTube 訂閱頻道
           </a>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-neon btn-neon-cyan"
-          >
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="btn-neon btn-neon-cyan">
             ▸ Facebook 追蹤專頁
           </a>
         </div>
